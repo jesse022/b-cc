@@ -1,0 +1,31 @@
+logging:
+  file: ${user.home}/logs/kanga/work.log
+  level.*: INFO
+  level.io.terminus: DEBUG
+
+mybatis:
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  type-aliases-package: io.terminus.parana.store.model
+
+mapper:
+  basePackage: io.terminus.parana.store.impl.dao
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/parana-store?useUnicode=true&characterEncoding=UTF8
+    username: root
+    password:
+
+redis:
+  host: 127.0.0.1
+  port: 6379
+  max-total: 10
+  max-idle: 2
+  test-on-borrow: true
+
+
+rpc.mode: true
+
+rpc.dubbo:
+  module: parana-repo

@@ -1,0 +1,31 @@
+logging:
+  file: ${user.home}/logs/kanga/web.log
+  level.*: INFO
+  level.io.terminus: DEBUG
+
+server:
+  context-path: /
+  port: 8000
+
+session:
+  cookie-domain: kanga.com
+  cookie-context-path: /
+  cookie-name: msid
+  cookie-max-age: 1800
+  source: redis
+  serialize-type: json
+  redis-host: 127.0.0.1
+  redis-port: 6379
+  redis-index: 0
+  redis-cluster: false
+  redis-test-on-borrow: true
+  redis-max-total: 10
+  redis-max-idle: 0
+  redis-prefix: afsession
+
+rpc.mode: true
+
+rpc.dubbo:
+  module: parana-store-web
+
+cache.duration: 0
