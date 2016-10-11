@@ -3,63 +3,58 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>io.terminus.parana</groupId>
         <artifactId>parana-store</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>parana-repo-web</artifactId>
-
+    <artifactId>parana-repo-user</artifactId>
 
     <dependencies>
+        <!--<dependency>-->
+        <!--<groupId>io.terminus.paas</groupId>-->
+        <!--<artifactId>service-profiler-monitor-dubbo</artifactId>-->
+        <!--</dependency>-->
         <dependency>
-            <groupId>io.terminus.parana</groupId>
-            <artifactId>parana-repo-api</artifactId>
+            <groupId>io.terminus.galaxy</groupId>
+            <artifactId>galaxy-user-api</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
         <dependency>
             <groupId>io.terminus.parana</groupId>
-            <artifactId>parana-common</artifactId>
+            <artifactId>parana-user</artifactId>
             <version>${parana.version}</version>
         </dependency>
         <dependency>
             <groupId>io.terminus.parana</groupId>
-            <artifactId>parana-trade-api</artifactId>
+            <artifactId>parana-article</artifactId>
+            <version>${parana-extra.version}</version>
         </dependency>
-        <dependency>
-            <groupId>io.terminus.parana</groupId>
-            <artifactId>parana-item-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.terminus.parana</groupId>
-            <artifactId>parana-user-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-tomcat</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jetty</artifactId>
-        </dependency>
-        <!-- session -->
-        <dependency>
-            <groupId>io.terminus.boot</groupId>
-            <artifactId>spring-boot-starter-session</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>io.terminus.boot.rpc</groupId>
             <artifactId>rpc-dubbo</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.terminus.boot</groupId>
+            <artifactId>spring-boot-starter-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -89,4 +84,5 @@
             </plugin>
         </plugins>
     </build>
+    
 </project>

@@ -12,6 +12,7 @@
         <module>parana-repo-web</module>
         <module>parana-repo</module>
         <module>parana-repo-api</module>
+        <module>parana-repo-user</module>
         <module>parana-store-showcase</module>
     </modules>
     <packaging>pom</packaging>

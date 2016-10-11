@@ -1,0 +1,37 @@
+logging:
+  file: ${user.home}/logs/kanga/web.log
+  level.*: INFO
+  level.io.terminus: DEBUG
+
+server:
+  context-path: /
+  port: 8000
+
+mybatis:
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  type-aliases-package: io.terminus.parana.(user|user.address|article|trade|item|store).model
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/parana-core?useUnicode=true&characterEncoding=UTF8
+    username: root
+    password: anywhere
+
+session:
+  cookie-domain: kanga.com
+  cookie-context-path: /
+  cookie-name: msid
+  cookie-max-age: 1800
+  source: redis
+  serialize-type: json
+  redis-host: 127.0.0.1
+  redis-port: 6379
+  redis-index: 0
+  redis-cluster: false
+  redis-test-on-borrow: true
+  redis-max-total: 10
+  redis-max-idle: 0
+  redis-prefix: afsession
+
+cache.duration: 0

@@ -12,5 +12,89 @@
 
     <artifactId>parana-store-showcase</artifactId>
 
-    
+
+    <dependencies>
+        <dependency>
+            <groupId>io.terminus.parana</groupId>
+            <artifactId>parana-repo-web</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.terminus.parana</groupId>
+            <artifactId>parana-repo</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.terminus.parana</groupId>
+            <artifactId>parana-repo-user</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.terminus.parana</groupId>
+            <artifactId>parana-common</artifactId>
+            <version>${parana.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.terminus.parana</groupId>
+            <artifactId>parana-trade</artifactId>
+            <version>${parana.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.terminus.parana</groupId>
+            <artifactId>parana-item</artifactId>
+            <version>4.3.BUILD-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jetty</artifactId>
+        </dependency>
+        <!-- session -->
+        <dependency>
+            <groupId>io.terminus.boot</groupId>
+            <artifactId>spring-boot-starter-session</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.terminus.boot.rpc</groupId>
+            <artifactId>rpc-dubbo</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version> 1.4.0.RELEASE</version>
+                <configuration>
+                    <executable>true</executable>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

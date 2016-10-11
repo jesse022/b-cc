@@ -1,0 +1,32 @@
+logging:
+  file: ${user.home}/logs/galaxy/user.log
+  level.*: INFO
+  level.io.terminus: DEBUG
+
+mybatis:
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  type-aliases-package: io.terminus.parana.(user|user.address|article).model
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/parana-core?useUnicode=true&characterEncoding=UTF8
+    username: root
+    password: anywhere
+
+redis:
+  host: 127.0.0.1
+  port: 6379
+  max-total: 10
+  max-idle: 2
+  test-on-borrow: true
+
+
+rpc.mode: true
+
+rpc.dubbo:
+  module: galaxy-user
+
+image:
+  protocol: https
+  domain: terminus-designer.oss-cn-hangzhou.aliyuncs.com
