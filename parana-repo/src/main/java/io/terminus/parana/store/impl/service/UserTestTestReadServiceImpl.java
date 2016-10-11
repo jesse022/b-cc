@@ -5,7 +5,7 @@ import io.terminus.boot.rpc.common.annotation.RpcProvider;
 import io.terminus.common.model.Response;
 import io.terminus.parana.store.impl.dao.UserMapper;
 import io.terminus.parana.store.model.UserTest;
-import io.terminus.parana.store.service.UserReadService;
+import io.terminus.parana.store.service.UserTestReadService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,12 +20,12 @@ import java.util.List;
 @Service
 @RpcProvider
 @Slf4j
-public class UserReadServiceImpl implements UserReadService {
+public class UserTestTestReadServiceImpl implements UserTestReadService {
 
     private final UserMapper userMapper;
 
     @Autowired
-    public UserReadServiceImpl(UserMapper userMapper) {
+    public UserTestTestReadServiceImpl(UserMapper userMapper) {
         this.userMapper = userMapper;
     }
 

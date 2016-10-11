@@ -5,16 +5,38 @@ logging:
 
 server:
   context-path: /
-  port: 8000
+  port: 9000
 
 mybatis:
   mapper-locations: classpath*:mapper/*Mapper.xml
-  type-aliases-package: io.terminus.parana.(user|user.address|article|trade|item|store).model
+  type-aliases-package: io.terminus.parana.(brand|spu|promotion|shop|category|delivery|user|user.address|article|trade|item|store|settle|cart|express|order).model
+
+mapper:
+  basePackage: io.terminus.parana.store.impl.dao
+
+item:
+  search:
+    index-name: items
+    index-type: item
+    mapping-path: item_mapping.json
+    full-dump-range: 3
+    batch-size: 100
+
+shop.search:
+  index-name: shops
+  index-type: shop
+  mapping-path: shop_mapping.json
+  full-dump-range: 3
+  batch-size: 100
+
+search:
+  host: 10.25.254.96
+  port: 9200
 
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/parana-core?useUnicode=true&characterEncoding=UTF8
+    url: jdbc:mysql://localhost:3306/parana-store?useUnicode=true&characterEncoding=UTF8
     username: root
     password: anywhere
 

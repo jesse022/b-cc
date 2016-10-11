@@ -10,6 +10,6 @@ import java.util.List;
  * @Email xgs@terminus.io
  * @Date 16/10/10
  */
-public interface UserReadService {
+public interface UserTestReadService {
     Response<List<UserTest>> findAll();
 }
